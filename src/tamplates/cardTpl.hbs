@@ -1,0 +1,39 @@
+<img class='logos' src='{{image.small}}' alt='logo-event' />
+<div class='cards'>
+
+  <div class='info-img'>
+    <img class='demo' src='{{image.big}}' alt='event' />
+  </div>
+
+  <div class='info-card'>
+    <span class='title-card'>INFO</span>
+    <p class='info-text'>
+      {{pleaseNote}}
+    </p>
+    <span class='title-card'>WHEN</span>
+    <p class='info-text'>{{date}}
+      <br />
+      {{time}} ({{timezone}})
+    </p>
+    <span class='title-card'>WHERE</span>
+    <p class='info-text'>{{city}}, {{country}}
+      <br />
+      {{place}}
+    </p>
+    <span class='title-card'>WHO</span>
+    <p class='info-text'>{{name}}</p>
+    {{#if prices}}
+    <span class='title-card'>PRICES</span>
+    {{#each prices}}
+    <div class="modal-price">
+      <svg class="modal__icon-barcode">
+        <use href="./images/sprite.svg#icon-barcode"></use>
+      </svg>
+      <p class='info-text'>{{type}} {{min}} - {{max}} {{currency}}</p>
+    </div>
+    <a class="modal-button" target="_blank" href={{../url}}>BUY TICKETS</a>
+    {{/each}}
+    {{/if}}
+  </div>
+</div>
+<button class='btn-more' data-name='{{name}}'>MORE FROM THIS AUTHOR</button>
